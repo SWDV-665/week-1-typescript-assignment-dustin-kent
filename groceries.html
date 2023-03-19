@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Grocery List</title>
+</head>
+<body>
+  <h1>Grocery List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="grocery-list">
+    </tbody>
+  </table>
+  <p>Total cost: $<span id="total-cost"></span></p>
+  <script src="grocery.js"></script>
+  <script>
+    const groceryList = document.querySelector("#grocery-list");
+    const totalCost = document.querySelector("#total-cost");
+    let total = 0;
+
+    // Loop through the groceries array and create a table row for each item
+    groceries.forEach(grocery => {
+      const tr = document.createElement("tr");
+      const totalPrice = grocery.totalPrice();
+      total += totalPrice;
+      tr.innerHTML = `
+        <td>&nbsp;&nbsp;&nbsp;${grocery.name}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${grocery.quantity}</td>
+        <td>${grocery.unit}</td>
+        <td>$${grocery.price.toFixed(2)}</td>
+        <td><strong>&nbsp;&nbsp;$${totalPrice.toFixed(2)}</strong></td>
+      `;
+      groceryList.appendChild(tr);
+    });
+
+    // Display total cost
+    totalCost.textContent = total.toFixed(2);
+  </script>
+</body>
+</html>

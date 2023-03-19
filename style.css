@@ -1,0 +1,39 @@
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold; /* add this line to make all text bold */
+  }
+  
+  .quantity {
+    flex-basis: 10%;
+    margin-right: 10px;
+  }
+  
+  .name {
+    flex-basis: 50%;
+    margin-right: 10px;
+  }
+  
+  .unit {
+    flex-basis: 20%;
+    margin-right: 10px;
+  }
+  
+  .price {
+    flex-basis: 20%;
+    text-align: right;
+  }
+
+.total-column {
+    font-weight: bold;
+}
+
+  #total-cost {
+    font-weight: bold;
+  }
+  
+tr td:nth-child(5) {
+    font-weight: bold;
+}
